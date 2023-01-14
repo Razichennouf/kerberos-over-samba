@@ -107,7 +107,7 @@
             "kadmin.local" : ktadd admin
             "kadmin.local" : quit
 	    => Adding Principal
-	   <img src="https://github.com/Razichennouf/Kerberos_Over_smb/blob/main/images/Configuring%20database%20adding%20principal.PNG"
+	   <img src="https://github.com/Razichennouf/kerberos-over-samba/blob/main/images/Configuring%20database%20adding%20principal.PNG"
 	   width="600"/>
 	    =>Adding a key tab
 	   <img src="https://github.com/Razichennouf/kerberos-over-samba/blob/main/images/Adding%20a%20keytab%20for%20principal.PNG"
