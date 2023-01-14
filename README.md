@@ -42,7 +42,7 @@
          sudo mkdir -p /home/samba/samba-share1
          sudo chmod  777 /home/samba/samba-share1
  => To test access SAMBA server you have to use 2 backslashes : \\192.168.233.45
-	<img src="https://github.com/Razichennouf/Kerberos-Over-smb/blob/main/images/Samba%20share%20built%20in%20authentication.PNG"
+	<img src="https://github.com/Razichennouf/kerberos-over-samba/blob/main/images/Samba%20share%20built%20in%20authentication.PNG"
 	width="400" />
 
 <h1> Setting up Kerberos KDC,PDC,Pricipal names, Schemas/databeses  </h1>   
@@ -65,11 +65,11 @@
         A page will trigger <b>realm</b> you should enter your DNS in UpperCase thats what we call a REALM
       Realm :
         MESSENGER.COM
-	<img src="https://github.com/Razichennouf/Kerberos_Over_smb/blob/main/images/Kerberos%20Setup%20Realm%20DNS.PNG"
+	<img src="https://github.com/Razichennouf/kerberos-over-samba/blob/main/images/Kerberos%20Setup%20Realm%20DNS.PNG"
 	width="600" />
       Administrative Server : 
         messenger.com <= same server
-	<img src="https://github.com/Razichennouf/Kerberos_Over_smb/blob/main/images/Administrative%20server.PNG"
+	<img src="https://github.com/Razichennouf/kerberos-over-samba/blob/main/images/Administrative%20server.PNG"
 	width="600"/>
       Edit config file :
         nano /etc/krb5.conf
@@ -110,7 +110,7 @@
 	   <img src="https://github.com/Razichennouf/Kerberos_Over_smb/blob/main/images/Configuring%20database%20adding%20principal.PNG"
 	   width="600"/>
 	    =>Adding a key tab
-	   <img src="https://github.com/Razichennouf/Kerberos_Over_smb/blob/main/images/Adding%20a%20keytab%20for%20principal.PNG"
+	   <img src="https://github.com/Razichennouf/kerberos-over-samba/blob/main/images/Adding%20a%20keytab%20for%20principal.PNG"
 	   width="600"/>
        2) Use kadmin tool 
             Fix error you are getting =>"kadmin: Client 'root/admin@MESSENGER.COM' not found in Kerberos database while initializing kadmin interface"
@@ -122,7 +122,7 @@
          while kadmin.local connects to the database directly on the local system
        
        =>Checking if there is a key Obtained from the <b>Key distribution center</b>
-     		<img src="https://github.com/Razichennouf/Kerberos_Over_smb/blob/main/images/Testing%20KDC%20and%20checking%20if%20there%20is%20a%20key%20obtained.PNG"
+     		<img src="https://github.com/Razichennouf/kerberos-over-samba/blob/main/images/Testing%20KDC%20and%20checking%20if%20there%20is%20a%20key%20obtained.PNG"
 		width="600"/>
        8) Configure the PDC  
        9) Check the Kadmin service is loaded & check the file kadm5.acl if exists else : 
@@ -134,6 +134,6 @@
   
 That's it! Your Linux machine should now be set up to share the samba-share and samba-share1 directories with other computers on the network using Samba. Other computers on the network should be able to access these directories by connecting to the Linux machine using the <b>Kerberos protocol<b/> Over Samba protocol (e.g., \\LINUX_MACHINE\documents). 
 => Login to your samba share wrapped with kerberos.
-<img src="https://github.com/Razichennouf/Kerberos_Over_smb/blob/main/images/Samba%20share%20built%20in%20authentication%202.PNG" 
+<img src="https://github.com/Razichennouf/kerberos-over-samba/blob/main/images/Samba%20share%20built%20in%20authentication%202.PNG" 
 	width="400"/>
 </pre>
