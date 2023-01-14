@@ -42,7 +42,7 @@
          sudo mkdir -p /home/samba/samba-share1
          sudo chmod  777 /home/samba/samba-share1
  => To test access SAMBA server you have to use 2 backslashes : \\192.168.233.45
-	<img src="https://github.com/Razichennouf/Kerberos_Over_smb/blob/main/images/Samba%20share%20built%20in%20authentication.PNG"
+	<img src="https://github.com/Razichennouf/Kerberos-Over-smb/blob/main/images/Samba%20share%20built%20in%20authentication.PNG"
 	width="400" />
 
 <h1> Setting up Kerberos KDC,PDC,Pricipal names, Schemas/databeses  </h1>   
