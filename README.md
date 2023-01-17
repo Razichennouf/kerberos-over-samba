@@ -124,6 +124,35 @@
        =>Checking if there is a key Obtained from the <b>Key distribution center</b>
      		<img src="https://github.com/Razichennouf/kerberos-over-samba/blob/main/images/Testing%20KDC%20and%20checking%20if%20there%20is%20a%20key%20obtained.PNG"
 		width="600"/>
+	3) Automate principale creation With 
+		- Via Python script :
+			import subprocess
+			# Define the user information
+			username = "testuser"
+			password = "TestPasswd1"
+			realm = "EXAMPLE.COM"
+
+			# Create the user account
+			subprocess.run(["kadmin.local", "-q", f"addprinc -pw {password} {username}@{realm}"])
+
+			# Add the user to the appropriate Kerberos group
+			subprocess.run(["kadmin.local", "-q", f"modprinc -addgroup {username} {realm}"])
+		- Via Bash script : 
+			#!/bin/bash
+			# Read the list of users from the file
+			while read username; do
+			  # Create a new principal for the user
+			  echo "Creating principal for $username"
+			  kadmin.local addprinc $username
+			done < users.txt
+			I)To use this script, save it to a file and make it executable using the chmod command:
+		chmod +x create_principals.sh
+			II)Then, create a file called users.txt that contains a list of the users that you want to create principals for, with one username per line. For example:
+				user1
+				user2
+				user3
+			III) Finally, run the script to create the principals:
+				./create_principals.sh
        8) Configure the PDC  
        9) Check the Kadmin service is loaded & check the file kadm5.acl if exists else : 
        	 => journalctl -xeu krb5-admin-server.service 
